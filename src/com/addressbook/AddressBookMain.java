@@ -14,6 +14,7 @@ public class AddressBookMain {
 		contacts[1] = new AddingContact("Ravi", "Thote", "Pusad MH", 445205, 7276948191L, "Ravi@gmail.com");
 
 		EditContact.editingContact();
+		RemovingContact.removeContact();
 
 	}
 
