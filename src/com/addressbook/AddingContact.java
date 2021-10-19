@@ -1,10 +1,10 @@
 package com.addressbook;
-
+/*
+ * class to creating and adding new contact 
+ */
 import java.util.Scanner;
 
 public class AddingContact {
-
-static AddingContact contacts[] = new AddingContact[2];
 	
 	static String firstName;
 	static String lastName;	
@@ -13,13 +13,18 @@ static AddingContact contacts[] = new AddingContact[2];
 	static long phoneNumber;
 	static String email;
 	
-	public AddingContact() {
-		 /* this.firstName = firstName;
-		  this.lastName = lastName;
-		  this.fullAddress = fullAddress;
-		  this.zip = zip;
-		  this.phoneNumber = phoneNumber;
-		  this.email = email;	*/
+	public AddingContact(String firstName, String lastName, String fullAddress, long zip, long phoneNumber, String email) {
+		  AddingContact.firstName = firstName;
+		  AddingContact.lastName = lastName;
+		  AddingContact.fullAddress = fullAddress;
+		  AddingContact.zip = zip;
+		  AddingContact.phoneNumber = phoneNumber;
+		  AddingContact.email = email;
+		}
+	
+	//method to create new contact
+	public static void newContact() {
+
 		Scanner input = new Scanner(System.in);
 		//Taking input from user and saving to particular variable
 		//Read full Name
@@ -44,25 +49,17 @@ static AddingContact contacts[] = new AddingContact[2];
 		//Read Phone Number
 		System.out.println("Enter Phone Number:"); 
 		phoneNumber = input.nextLong();
-		input.close();	  
-		}
-	
-	//method to create new contact
-	public static void newContact(int index) {
-		if(index < contacts.length) {
-		contacts[index] = new AddingContact();
-		}
-		else {
-			System.out.println("Contact List is Full");
-		}
+		input.close();	
+		
 		return ;
 	}
 	
+
 		@Override
 	public String toString() {
-		return "AddingContact [getFirstName()=" + getFirstName() + ", getLastName()=" + getLastName()
-				+ ", getFullAddress()=" + getFullAddress() + ", getZip()=" + getZip() + ", getPhoneNumber()="
-				+ getPhoneNumber() + ", getEmail()=" + getEmail() + "]";
+		return "AddingContact [firstName= " + firstName + ", lastName= " + lastName
+				+ ", fullAddress= " + fullAddress + ", zip= " + zip + ", phoneNumber= "
+				+ phoneNumber + ", email= " + email + "]";
 	}
 
 		public String getFirstName() {
@@ -70,7 +67,7 @@ static AddingContact contacts[] = new AddingContact[2];
 		}
 
 		public void setFirstName(String firstName) {
-			this.firstName = firstName;
+			AddingContact.firstName = firstName;
 		}
 
 		public String getLastName() {
